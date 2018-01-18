@@ -19,31 +19,23 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
 
-h1, h2 {
-  font-weight: normal;
-}
+*
+  padding: 0
+  margin: 0
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
+html
+  position: relative
+  margin: 0
+  padding: 0
+  height: 100%
+  width: 100%
 
-a {
-  color: #42b983;
-}
+#app 
+  font-family: 'Avenir', Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
 </style>

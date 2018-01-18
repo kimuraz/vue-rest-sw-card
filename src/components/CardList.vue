@@ -1,17 +1,19 @@
 <template>
   <div class="card-list">
-    <modal-card-form route="cards/" v-if="showForm"/>
+    <modal-card-form route="cards/" v-if="showForm" @close="closeAndUpdate"/>
     <h3 v-if="!cards || !cards.length">
       No data available.
     </h3>
     <button type="button" @click="showForm = true">
       Add card
     </button>
-    <sw-card 
-      v-for="card in cards"
-      :key="card.id"
-      :card="card"
-    />
+    <div class="cards">
+      <sw-card 
+        v-for="card in cards"
+        :key="card.id"
+        :card="card"
+      />
+    </div>
   </div>
 </template>
 
@@ -42,11 +44,24 @@ export default {
     },
     showErr(err) {
       alert(JSON.stringify(err));
-    }
+    },
+    closeAndUpdate() {
+      this.showForm = false;
+      this.loadList(this.setCards, this.showErr);
+    },
   }
 }
 </script>
 
 <style lang="sass">
+.card-list
+  h3
+    width: 100%
+    text-align: center
+  .cards
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    padding: 30px 10px
 
 </style>
